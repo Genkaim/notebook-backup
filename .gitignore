@@ -8,3 +8,7 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# STM32 - 0开头的文件夹不纳入git（仓库内为 STM32/ 大写，本地为 stm32/ 小写，两种都忽略）
+STM32/0*/
+stm32/0*/
