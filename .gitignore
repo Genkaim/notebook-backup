@@ -8,3 +8,9 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# STM32 - 0开头的文件夹不纳入git
+stm32/0 Tools/
+stm32/0 参考文档/
+stm32/0 固件库/
+stm32/0 模块资料/
