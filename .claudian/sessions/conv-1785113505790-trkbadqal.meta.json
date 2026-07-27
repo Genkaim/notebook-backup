@@ -4,8 +4,8 @@
   "title": "哟，来了。既然你说 hi，这对话也没明确任务，我猜你刚打开电脑或者刚想起来有个项目要搞？\n\n先...",
   "titleGenerationStatus": "success",
   "createdAt": 1785113505798,
-  "updatedAt": 1785118000336,
-  "lastResponseAt": 1785118000336,
+  "updatedAt": 1785119103147,
+  "lastResponseAt": 1785119103147,
   "sessionId": "49913cd0-a5ae-431e-a9a6-70c167fd295d",
   "selectedModel": "haiku",
   "providerState": {
@@ -13,12 +13,12 @@
   },
   "usage": {
     "model": "haiku",
-    "inputTokens": 1429,
+    "inputTokens": 311,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 56448,
+    "cacheReadInputTokens": 63616,
     "contextWindow": 200000,
     "contextWindowIsAuthoritative": true,
-    "contextTokens": 57877,
-    "percentage": 29
+    "contextTokens": 63927,
+    "percentage": 32
   }
 }
