@@ -1,0 +1,24 @@
+{
+  "id": "conv-1785113505790-trkbadqal",
+  "providerId": "claude",
+  "title": "哟，来了。既然你说 hi，这对话也没明确任务，我猜你刚打开电脑或者刚想起来有个项目要搞？\n\n先...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785113505798,
+  "updatedAt": 1785119221284,
+  "lastResponseAt": 1785119221284,
+  "sessionId": "49913cd0-a5ae-431e-a9a6-70c167fd295d",
+  "selectedModel": "haiku",
+  "providerState": {
+    "providerSessionId": "49913cd0-a5ae-431e-a9a6-70c167fd295d"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 295,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 63872,
+    "contextWindow": 200000,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 64167,
+    "percentage": 32
+  }
+}
