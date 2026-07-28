@@ -1,20 +1,42 @@
 #include "stm32f10x.h"
 #include "delay.h"
 
+BitAction Invert(uint16_t temp) {
+    switch (temp) {
+        case 0x01:
+            return Bit_RESET;
+        case 0x00:
+            return Bit_SET;
+        default:
+            return Bit_SET;
+    }
+}
+
 int main() {
     delay_init();
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
     GPIO_InitTypeDef GPIO_Init_Struct;
     GPIO_Init_Struct.GPIO_Mode = GPIO_Mode_Out_PP;
     GPIO_Init_Struct.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init_Struct.GPIO_Pin = GPIO_Pin_All;
+    GPIO_Init_Struct.GPIO_Pin = GPIO_Pin_0 | GPIO_Pin_1;
     GPIO_Init(GPIOA, &GPIO_Init_Struct);
-    uint16_t temp = ~0x01;
-    GPIO_Write(GPIOA, temp);
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+    GPIO_Init_Struct.GPIO_Mode = GPIO_Mode_IPU;
+    GPIO_Init_Struct.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init_Struct.GPIO_Pin = GPIO_Pin_0;
+    GPIO_Init(GPIOB, &GPIO_Init_Struct);
+
+    GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_RESET);
+    GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_SET);
     while(1) {
-        temp = ~((~temp)<<1);
-        if((temp & 0x00FF) >= 0xFF) temp = ~0x0001;
-        GPIO_Write(GPIOA, temp);
-        delay_ms(100);
+        if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0)==0){
+            delay_ms(30);
+            while(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0)==0);
+            delay_ms(30);
+            GPIO_WriteBit(GPIOA, GPIO_Pin_0, Invert(GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_0)));
+            GPIO_WriteBit(GPIOA, GPIO_Pin_1, Invert(GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_1)));
+        }
+        
     }
 }

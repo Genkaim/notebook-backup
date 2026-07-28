@@ -1,0 +1,22 @@
+{
+  "id": "conv-1785200676053-hxtl88zsr",
+  "providerId": "claude",
+  "title": "<read>file=\"MathModel/14 拟合成算法.md\"</read>",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785200676061,
+  "updatedAt": 1785206677389,
+  "lastResponseAt": 1785206425824,
+  "sessionId": null,
+  "selectedModel": "claude-code/deepseek-v4-flash",
+  "currentNote": "MathModel/14 拟合算法.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 36517,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 36517,
+    "percentage": 18,
+    "contextWindowIsAuthoritative": true
+  }
+}

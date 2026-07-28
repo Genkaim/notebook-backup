@@ -1,24 +1,24 @@
 {
   "id": "conv-1785113505790-trkbadqal",
   "providerId": "claude",
-  "title": "哟，来了。既然你说 hi，这对话也没明确任务，我猜你刚打开电脑或者刚想起来有个项目要搞？\n\n先...",
+  "title": "我是 Claude 的一个代理实现，基于 Anthropic 的 Claude Agent S...",
   "titleGenerationStatus": "success",
   "createdAt": 1785113505798,
-  "updatedAt": 1785135299073,
-  "lastResponseAt": 1785135299073,
-  "sessionId": "49913cd0-a5ae-431e-a9a6-70c167fd295d",
-  "selectedModel": "haiku",
+  "updatedAt": 1785206686964,
+  "lastResponseAt": 1785206683413,
+  "sessionId": "3dd1c4ff-3efb-4287-85ba-ee9848c69929",
+  "selectedModel": "claude-code/deepseek-v4-flash",
   "providerState": {
-    "providerSessionId": "49913cd0-a5ae-431e-a9a6-70c167fd295d"
+    "providerSessionId": "3dd1c4ff-3efb-4287-85ba-ee9848c69929"
   },
   "usage": {
-    "model": "haiku",
-    "inputTokens": 392,
+    "model": "deepseek-v4-flash",
+    "inputTokens": 23567,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 66048,
+    "cacheReadInputTokens": 0,
     "contextWindow": 200000,
-    "contextWindowIsAuthoritative": true,
-    "contextTokens": 66440,
-    "percentage": 33
+    "contextTokens": 23567,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
   }
 }

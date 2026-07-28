@@ -8,6 +8,7 @@ srcDirs:
   - Library
   - Start
   - System
+  - Hardware
 virtualFolder:
   name: <virtual_root>
   files: []
@@ -28,6 +29,7 @@ targets:
         - Library
         - User
         - System
+        - Hardware
       libList: []
     excludeList:
       - Start/startup_stm32f10x_md_vl.s
