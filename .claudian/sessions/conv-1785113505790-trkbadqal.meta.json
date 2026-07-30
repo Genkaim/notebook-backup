@@ -4,8 +4,8 @@
   "title": "我是 Claude 的一个代理实现，基于 Anthropic 的 Claude Agent S...",
   "titleGenerationStatus": "success",
   "createdAt": 1785113505798,
-  "updatedAt": 1785284577970,
-  "lastResponseAt": 1785284577970,
+  "updatedAt": 1785371822041,
+  "lastResponseAt": 1785371822041,
   "sessionId": "3dd1c4ff-3efb-4287-85ba-ee9848c69929",
   "selectedModel": "claude-code/deepseek-v4-flash",
   "providerState": {
@@ -13,12 +13,11 @@
   },
   "usage": {
     "model": "deepseek-v4-flash",
-    "inputTokens": 411,
+    "inputTokens": 0,
     "cacheCreationInputTokens": 0,
-    "cacheReadInputTokens": 30976,
+    "cacheReadInputTokens": 0,
     "contextWindow": 200000,
-    "contextWindowIsAuthoritative": true,
-    "contextTokens": 31387,
-    "percentage": 16
+    "contextTokens": 0,
+    "percentage": 0
   }
 }
