@@ -1,5 +1,6 @@
 #include "stm32f10x.h"
 #include "delay.h"
+#include "OLED.h"
 
 BitAction Invert(uint16_t temp) {
     switch (temp) {
@@ -29,6 +30,11 @@ int main() {
 
     GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_RESET);
     GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_SET);
+
+
+    OLED_Init();
+    OLED_ShowString(1, 1, "Hello");
+    OLED_ShowString(2, 1, "World");
     while(1) {
         if(GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_0)==0){
             delay_ms(30);
