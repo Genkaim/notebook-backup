@@ -1,0 +1,25 @@
+{
+  "id": "conv-1785632489646-yyccxagpk",
+  "providerId": "claude",
+  "title": "我是 Claude Haiku 4.5（模型 ID：claude-haiku-4-5），Ant...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1785632489655,
+  "updatedAt": 1785635424271,
+  "lastResponseAt": 1785635424220,
+  "sessionId": "ef378c48-9e24-4ad1-8625-dba02cd169be",
+  "selectedModel": "sonnet",
+  "providerState": {
+    "providerSessionId": "ef378c48-9e24-4ad1-8625-dba02cd169be"
+  },
+  "currentNote": "MathModel/17 聚类分析.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 24176,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 24176,
+    "percentage": 12,
+    "contextWindowIsAuthoritative": true
+  }
+}
