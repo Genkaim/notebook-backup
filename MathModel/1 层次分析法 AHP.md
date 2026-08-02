@@ -39,7 +39,7 @@ CR=\frac{CI}{RI} \begin{cases} 0\;为一致性矩阵\\ <0.1 \;满足一致性检
 $$
 其中，$(\lambda'_{max}是随机正互反矩阵的最大特征值的平均值，作为基准)$
 $$
-CI=\frac{\lambda_{max-n}}{n-1}\qquad RI=\frac{\lambda'_{max}-n}{n-1}
+CI=\frac{\lambda_{max}-n}{n-1}\qquad RI=\frac{\lambda'_{max}-n}{n-1}
 $$
 $RI$查表得
 
@@ -51,7 +51,7 @@ $RI$查表得
 有三种办法，可以采用均值：
 - **算术平均法**
 	- 按列归一化后，按行求均值，就是对应的权重$$
-			 w_i=\frac{1}{n}\sum_{j=1}^n \frac{a_{ij}}{\sum_{k=1}^n}(i=1,2,3,...,n)
+			 w_i=\frac{1}{n}\sum_{j=1}^n \frac{a_{ij}}{\sum_{k=1}^n a_{kj}}(i=1,2,3,...,n)
 		 $$
 - **几何平均法**
 	- 先按行相乘，开n次根号，最后按列求均值，就是对应权重。$$
