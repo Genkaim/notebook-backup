@@ -38,19 +38,15 @@ STM32F1 的 GPIO 共有 **8 种工作模式**，由 `GPIOx_CRL` / `GPIOx_CRH` �
 ## 四、GPIO 在硬件中的位置
 
 
-```
-                    ┌─ AHB ──── SDIO, FSMC, DMA, SRAM, FLASH, CRC, ETH
-                    │
-Cortex-M3 ── I-bus ─┤
-            ── D-bus ─┤
-                      │         ┌─ GPIO A~G, AFIO, EXTI
-                      ├─ APB2 ──┤  ADC1/2/3, TIM1/8/9/10/11/15/16/17
-                      │  (72MHz) └─ SPI1, USART1
-                      │
-                      │         ┌─ TIM2/3/4/5/6/7/12/13/14
-                      └─ APB1 ──┤  USART2/3, UART4/5
-                         (36MHz) ├─ I2C1/2, SPI2/3/I2S
-                                 └─ CAN, USB, BKP, PWR, DAC, IWDG, WWDG, RTC
+```mermaid
+flowchart LR
+    CM3["Cortex-M3"] -->|I-bus| AHB["AHB"]
+    CM3 -->|D-bus| AHB
+    AHB --> AHB_P["SDIO / FSMC / DMA / SRAM / FLASH / CRC / ETH"]
+    AHB --> APB2["APB2（72 MHz）"]
+    AHB --> APB1["APB1（36 MHz）"]
+    APB2 --> APB2_P["GPIO A~G、AFIO、EXTI<br/>ADC1/2/3、TIM1/8/9/10/11/15/16/17<br/>SPI1、USART1"]
+    APB1 --> APB1_P["TIM2/3/4/5/6/7/12/13/14<br/>USART2/3、UART4/5<br/>I2C1/2、SPI2/3/I2S<br/>CAN、USB、BKP、PWR、DAC、IWDG、WWDG、RTC"]
 ```
 
 ### RCC 时钟门控
@@ -69,13 +65,15 @@ RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);  // 打开 GPIOA 时钟
 
 ### 步骤总览
 
-```
-1. #include "stm32f10x.h"     ← 头文件，包含了所有外设寄存器定义和库函数声明
-2. RCC_APB2PeriphClockCmd()   ← 开时钟（必须第一步！）
-3. GPIO_InitTypeDef 填参数    ← 哪个引脚 / 什么速度 / 什么模式
-4. GPIO_Init()                ← 写入 CRL/CRH 寄存器
-5. GPIO_SetBits/ResetBits()   ← 设定初始电平
-6. while(1) {}                ← 主循环里按需读写
+```mermaid
+flowchart TD
+    A["① #include &quot;stm32f10x.h&quot;<br/>头文件，包含所有外设寄存器定义和库函数声明"]
+    B["② RCC_APB2PeriphClockCmd()<br/>开时钟（必须第一步！）"]
+    C["③ GPIO_InitTypeDef 填参数<br/>哪个引脚 / 什么速度 / 什么模式"]
+    D["④ GPIO_Init()<br/>写入 CRL/CRH 寄存器"]
+    E["⑤ GPIO_SetBits / GPIO_ResetBits()<br/>设定初始电平"]
+    F["⑥ while(1) {}<br/>主循环里按需读写"]
+    A --> B --> C --> D --> E --> F
 ```
 
 ### 完整例子：点亮 PC13 的 LED
